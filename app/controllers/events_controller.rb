@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :login_require, except: %i[index]
   def index
     @events = Event.all
   end
