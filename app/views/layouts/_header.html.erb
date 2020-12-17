@@ -1,9 +1,14 @@
 <div class="brand">Private Events</div>
+<%= current_user.name if logged_in? %>
 <nav>
   <ul>
     <li><%= link_to  "Home", root_path %></li>
-    <li><%= link_to  "Sign up", new_user_path %></li>
-    <li><%= link_to  "Sign in", sign_in_path %></li>
-    <li><%= link_to  "Logout", logout_path, method: :delete %></li>
+    
+    <% if logged_in? %>
+      <li><%= link_to  "Logout", logout_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to  "Sign up", new_user_path %></li>
+      <li><%= link_to  "Sign in", sign_in_path %></li>
+    <% end %>
   </ul>
 </nav>
