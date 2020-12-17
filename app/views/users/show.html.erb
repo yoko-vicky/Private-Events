@@ -1,1 +1,4 @@
 <h1><%= @user.name %></h1>
+<% if @user.events.any? %>
+  <%= render partial: "events/event", collection: @user.events %>
+<% end %>
