@@ -2,3 +2,13 @@
 <p>Date: <%= @event.date %></p>
 <p>Location: <%= @event.location %></p>
 <p>Created by <%= link_to @event.creator.name, user_path(@event.creator) %></p>
+<p>Attendees: </p>
+
+<% if @event.attendees.any?%>
+    <ul>
+        <% @event.attendees.each do |attendee| %>
+            <li><%= attendee.name %></li>
+        <% end %>
+    </ul>
+<% end %>
+
