@@ -1,4 +1,15 @@
 <h1><%= @user.name %></h1>
 <% if @user.events.any? %>
+  <h2>Events created by <%= @user.name %></h2>
   <%= render partial: "events/event", collection: @user.events %>
+<% end %>
+
+<% if @user.attended_events.where("date > ?", Time.now).any? %>
+  <h2>Upcoming events</h2>
+  <%= render partial: "events/event", collection: @user.attended_events.where("date > ?", Time.now) %>
+<% end %>
+
+<% if @user.attended_events.where("date < ?", Time.now).any? %>
+  <h2>Previously attended events</h2>
+  <%= render partial: "events/event", collection: @user.attended_events.where("date < ?", Time.now) %>
 <% end %>
