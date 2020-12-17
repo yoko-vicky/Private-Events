@@ -1,11 +1,11 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
-# PROJECTTITLE
+# Private Events
 ![Top Page Screenshot](./screenshot.jpg)
 
 
 ## About the Project
 
-This project is based on ...
+This project is based on the [Odin Project: Rails Associations](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations). 
 
 A list of commonly used resources that I find helpful is listed in the acknowledgments.
 
@@ -52,11 +52,12 @@ e.g. $ git clone https://github.com/yourUsername/yourProjectName
 
 ## Authors
 
-👤 **Author1**
+👤 **Binyam Hailemeskel**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
+- GitHub: [@bini-i](https://github.com/bini-i)
+- Twitter: [@binyamshewa](https://twitter.com/binyamshewa)
+- LinkedIn: [binyam hailemeskel](https://www.linkedin.com/in/bini-i/)
+
 
 👤 **Yoko Saka**
 
@@ -88,6 +89,5 @@ This project is [MIT](./LICENSE) licensed.
 
 
 ## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
+* [Odin Project: Rails Associations](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)
+* [Bulma](https://bulma.io/documentation/)
