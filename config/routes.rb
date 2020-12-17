@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'users#index'
+  root 'events#index'
   resources :users, only: %i[new create show index]
   resources :events, except: %i[edit update destroy]
   get 'sign_in', to: 'sessions#new'

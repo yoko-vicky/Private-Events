@@ -1,0 +1,5 @@
+<% if @events.any? %>
+  <%= render partial: "event", collection: @events %>
+<% else %>
+  <p>Not found</p>
+<% end %>

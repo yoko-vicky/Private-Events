@@ -3,9 +3,10 @@
 <nav>
   <ul>
     <li><%= link_to  "Home", root_path %></li>
-    
+
     <% if logged_in? %>
       <li><%= link_to  "Logout", logout_path, method: :delete %></li>
+      <li><%= link_to  "Create a new event", new_event_path %></li>
     <% else %>
       <li><%= link_to  "Sign up", new_user_path %></li>
       <li><%= link_to  "Sign in", sign_in_path %></li>
