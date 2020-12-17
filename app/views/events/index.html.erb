@@ -1,5 +1,13 @@
 <% if @events.any? %>
   <%= render partial: "event", collection: @events %>
 <% else %>
-  <p>Not found</p>
+  <p>No events found</p>
 <% end %>
+
+
+<%# user                                                               user_post        post
+user(attendee) ---->                                                event_attendance      ---->           event(attended_event)
+                                                                     event_attendee_id, attended_event_id
+has_many :events                                                                                           belong_to :user
+has_many :event_attendancce foreign_key :attendee_id
+has_many :attended_events, through                                                                        has_many :attendee %>
