@@ -21,7 +21,7 @@ A list of commonly used resources that I find helpful is listed in the acknowled
 
 * [About the Project](#about-the-project)
 * [Built With](#built-with)
-* [Live Demo](#live-demo)
+<!-- * [Live Demo](#live-demo) -->
 * [Getting Started](#getting-started)
 * [Authors](#authors)
 * [Contributing](#contributing)
@@ -37,10 +37,10 @@ A list of commonly used resources that I find helpful is listed in the acknowled
 * [SASS(SCSS)](https://sass-lang.com/)
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
-
+<!-- 
 ## Live Demo
 
-[Live Demo Link](https://yocosaka.github.io)
+[Live Demo Link](https://yocosaka.github.io) -->
 
 
 ## Getting Started
