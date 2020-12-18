@@ -1,0 +1,11 @@
+<% if flash.any? %>
+  <% flash.each do |title, msg| %>
+    <div class="notification
+      <%= 'is-primary' if title == 'notice' %>
+      <%= 'is-danger' if title == 'alert'%>">
+      <button class="delete"></button>
+      <%= msg %>
+    </div>  
+  <% end %>
+<% end %>
+    

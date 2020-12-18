@@ -1,0 +1,43 @@
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-1">
+        <%= @user.name %>'s events
+      </h1>
+      <%# <h2 class="subtitle">
+        Primary subtitle
+      </h2> %>
+    </div>
+  </div>
+</section>
+
+<div class="container is-fluid">
+
+  <h2 class="title is-3">Hosted events</h2>
+  <% if @user.events.any? %>
+    <div class="columns is-desktop">
+      <%= render partial: "events/event", collection: @user.events %>
+    </div>
+  <% else %>
+    <p><%= @user.name %> has not created an event yet.</p>
+  <% end %>
+
+  <h2 class="title is-3">Joining Events</h2>
+  <% if @user.attended_events.where("date > ?", Time.now).any? %>
+    <div class="columns is-desktop">
+      <%= render partial: "events/event", collection: @user.attended_events.where("date > ?", Time.now) %>
+    </div>
+  <% else %>
+    <p><%= @user.name %> has no plan to attend an event yet.</p>
+  <% end %>
+
+  <h2 class="title is-3">Attended Events</h2>
+  <% if @user.attended_events.where("date < ?", Time.now).any? %>
+    <div class="columns is-desktop">
+      <%= render partial: "events/event", collection: @user.attended_events.where("date < ?", Time.now) %>
+    </div>
+  <% else %>
+    <p><%= @user.name %> has not attended an event yet.</p>
+  <% end %>
+
+</div>

@@ -1,0 +1,16 @@
+<h1 class="title is-1">Sign In</h1>
+<div class="column is-one-third">
+  <%= form_with(scope: :session, url: sign_in_path, local: true) do |f| %>
+    <div class="field">
+      <%= f.label :name, {class: 'label'}%>
+      <div class="control">
+        <%= f.text_field :name, {class: 'input'} %>
+      </div>
+    </div>
+    <div class="field is-grouped">
+      <div class="control">
+        <%= f.submit "Sign In", class: 'button is-link'%>
+      </div>
+    </div>
+  <% end %>
+</div>
