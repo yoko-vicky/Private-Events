@@ -11,3 +11,11 @@
         <% end %>
     </ul>
 <% end %>
+<% if @event.date > Time.now && logged_in?%> 
+    <%= form_with scope: :invite, url: event_invites_path(@event) do |f|%>
+      <%= f.label :user %>
+      <%= f.select :user, User.where.not(id: current_user.id).map{|user| user.name}.reject{|user| @event.attendees.include?(user)} %> 
+
+      <%= f.submit "Invite" %>
+    <% end %>
+  <% end %> 
