@@ -13,7 +13,7 @@ The project allows users:
 - to invite many attendees to events
 - to view previous and upcoming events
 
-We are stylying with Bulma css framework. 
+We are styling with Bulma css framework. 
 A list of commonly used resources that I find helpful is listed in the acknowledgments.
 
 
