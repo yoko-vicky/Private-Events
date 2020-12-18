@@ -1,24 +1,37 @@
-<%= form_with(model: @event, local: true) do |f| %>
-  <div class="field">
-    <%= f.label :title %> <br>
-    <%= f.text_field :title %>
-  </div>
+<div class="column is-one-third">
+  <%= form_with(model: @event, local: true) do |f| %>
+    <div class="field">
+      <%= f.label :title, {class: "label"} %>
+      <div class="control">
+        <%= f.text_field :title, {class: "input"} %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :description %> <br>
-    <%= f.text_area :description %>
-  </div>
+    <div class="field">
+      <%= f.label :description, {class: "label"} %>
+      <div class="control">
+        <%= f.text_area :description, {class: "textarea"} %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :location %> <br>
-    <%= f.text_field :location %>
-  </div>
+    <div class="field">
+      <%= f.label :location, {class: "label"} %>
+      <div class="control">
+        <%= f.text_field :location, {class: "input"} %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :date %> <br>
-    <%= f.datetime_field :date %>
-  </div>
-  <br>
-  <br>
-  <%= f.submit "Create an event" %>
-<% end %>
+    <div class="field">
+      <%= f.label :date, {class: "label"} %>
+      <div class="control">
+        <%= f.datetime_field :date, {class: "input"} %>
+      </div>
+    </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <%= f.submit "Create an event", class: 'button is-link'%>
+        </div>
+      </div>
+  <% end %>
+</div>
