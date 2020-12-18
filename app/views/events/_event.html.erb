@@ -1,6 +1,18 @@
-<div class="event_card">
-  <h3><%= event.title %></h3>
-  <p>Date: <%= event.date %></p>
-  <p>Location: <%= event.location %></p>
-  <%= link_to  "See more", event_path(event) %>  
+<div class="column is-one-third">
+  <div class="card">
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <p class="is-5"><%= fa_icon "calendar", class: "has-text-primary" %> <time datetime="2016-1-1"><%= event.date %></time></p>
+          <p><%= fa_icon "globe", class: "has-text-primary" %> At <%= event.location %></p>
+          <h2 class="title is-1"><%= event.title %></h2>
+        </div>
+      </div>
+      <br>
+      <div class="content">
+        <p><%= event.description %></p>
+        <%= link_to  "See more", event_path(event), class: "button is-black" %>
+      </div>
+    </div>
+  </div>
 </div>

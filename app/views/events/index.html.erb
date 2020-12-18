@@ -1,15 +1,57 @@
+<%# <section class="hero is-medium is-primary is-bold is-fullheight-with-navbar">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Welcome to Private Events
+      </h1>
+      <h2 class="subtitle">
+        Primary bold subtitle
+      </h2>
+    </div>
+  </div>
+</section> %>
+
 <% if @events.any? %>
-  <%= render partial: "event", collection: @events %>
+  <% if @events.upcoming.any? %>
+    <section class="hero is-success">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Upcoming events
+          </h1>
+          <h2 class="subtitle">
+            Primary subtitle
+          </h2>
+        </div>
+      </div>
+    </section>
+    <div class="container is-fluid">
+      <div class="columns is-desktop">
+        <%= render partial: "events/event", collection: @events.upcoming %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @events.past.any? %>
+    <section class="hero is-info">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Past events
+          </h1>
+          <h2 class="subtitle">
+            Primary subtitle
+          </h2>
+        </div>
+      </div>
+    </section>
+    <div class="container is-fluid">
+      <div class="columns is-desktop">
+        <%= render partial: "events/event", collection: @events.past %>
+      </div>
+    </div>
+  <% end %>
+
 <% else %>
   <p>No events found</p>
-<% end %>
-
-<% if @events.upcoming.any? %>
-  <h2>Upcoming events</h2>
-  <%= render partial: "events/event", collection: @events.upcoming %>
-<% end %>
-
-<% if @events.past.any? %>
-  <h2>Previously attended events</h2>
-  <%= render partial: "events/event", collection: @events.past %>
 <% end %>

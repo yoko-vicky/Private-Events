@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>PrivateEvents</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,7 +12,9 @@
 
   <body>
     <%= render  "layouts/header" %>
-    <%= render  "layouts/messages" %>
-    <%= yield %>
+    <div class="container is-fullhd">
+      <%= render  "layouts/messages" %>
+      <%= yield %>
+    </div>
   </body>
 </html>

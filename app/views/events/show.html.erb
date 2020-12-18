@@ -1,21 +1,58 @@
-<h1><%= @event.title  %></h1>
-<p>Date: <%= @event.date %></p>
-<p>Location: <%= @event.location %></p>
-<p>Created by <%= link_to @event.creator.name, user_path(@event.creator) %></p>
-<p>Attendees: </p>
 
-<% if @event.attendees.any?%>
-    <ul>
-        <% @event.attendees.each do |attendee| %>
-            <li><%= attendee.name %></li>
-        <% end %>
-    </ul>
-<% end %>
-<% if @event.date > Time.now && logged_in?%> 
-    <%= form_with scope: :invite, url: event_invites_path(@event) do |f|%>
-      <%= f.label :user %>
-      <%= f.select :user, User.where.not(id: current_user.id).map{|user| user.name}.reject{|user| @event.attendees.include?(user)} %> 
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-1">
+        <%= @event.title  %>
+      </h1>
+      <h2 class="subtitle">
+        Primary subtitle
+      </h2>
+    </div>
+  </div>
+</section>
 
-      <%= f.submit "Invite" %>
-    <% end %>
-  <% end %> 
+<div class="container is-fluid">
+  <div class="table-container">
+    <table class="table is-striped is-fullwidth">
+      <tbody>
+          <tr>
+              <th><%= fa_icon "calendar", class: "has-text-primary" %> Date</th>
+              <td><%= @event.date %></td>
+          </tr>
+          <tr>
+              <th><%= fa_icon "globe", class: "has-text-primary"  %> Location</th>
+              <td><%= @event.location %></td>
+          </tr>
+          <tr>
+              <th><%= fa_icon "calendar", class: "has-text-primary" %> Date</th>
+              <td><%= @event.date %></td>
+          </tr>
+          <tr>
+              <th><%= fa_icon "pencil", class: "has-text-primary"  %> Created by</th>
+              <td><%= link_to @event.creator.name, user_path(@event.creator) %></td>
+          </tr>
+          <% if @event.attendees.any?%>
+              <tr>
+                  <th><%= fa_icon "users", class: "has-text-primary"  %> Attendees</th>
+                  <td>
+                      <ul>
+                          <% @event.attendees.each do |attendee| %>
+                              <li><%= attendee.name %></li>
+                          <% end %>
+                      </ul>
+                        <br>
+                      <% if @event.date > Time.now && logged_in?%>
+                        <%= form_with scope: :invite, url: event_invites_path(@event) do |f|%>
+                        <%= f.label :user, 'Select user to invite:' %>
+                        <%= f.select :user, User.where.not(id: current_user.id).map{|user| user.name}.reject{|user| @event.attendees.include?(user)} %>
+                        <%= f.submit "Invite" %>
+                        <% end %>
+                    <% end %>
+                  </td>
+              </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

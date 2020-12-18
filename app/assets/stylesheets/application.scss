@@ -12,4 +12,28 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+@import 'bulma';
+@import "font-awesome";
+
+i {
+  margin-right: 0.5rem;
+}
+
+.brand {
+  margin-bottom: 0 !important;
+}
+
+.header {
+  margin-bottom: 0.5rem;
+}
+
+.hero {
+  margin-bottom: 1rem;
+}
+
+.card {
+  margin-bottom: 1rem;
+}
