@@ -1,12 +1,19 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # Private Events
-![Top Page Screenshot](./screenshot.jpg)
+![Top Page Screenshot](./screenshot.png)
 
 
 ## About the Project
 
-This project is based on the [Odin Project: Rails Associations](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations). 
+This project is based on the [Odin Project: Rails Associations](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations).
 
+The project allows users:
+- to log in
+- to create events
+- to invite many attendees to events
+- to view previous and upcoming events
+
+We are stylying with Bulma css framework. 
 A list of commonly used resources that I find helpful is listed in the acknowledgments.
 
 
@@ -90,4 +97,5 @@ This project is [MIT](./LICENSE) licensed.
 
 ## Acknowledgements
 * [Odin Project: Rails Associations](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)
-* [Bulma](https://bulma.io/documentation/)
+* [Bulma gem](https://bulma.io/documentation/)
+* [font-awesome-rails gem](https://github.com/bokmann/font-awesome-rails)
