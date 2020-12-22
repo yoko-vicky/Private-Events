@@ -1,5 +1,5 @@
 <%= form_with scope: :invite, url: event_invites_path(@event) do |f|%>
   <%= f.label :user, 'Select user to invite:' %>
-  <%= f.select :user, User.where.not(id: current_user.id).map{|user| user.name}.reject{|user| @event.attendees.include?(user)} %>
+  <%= f.select :user, users_to_invite %>
   <%= f.submit "Invite" %>
 <% end %>

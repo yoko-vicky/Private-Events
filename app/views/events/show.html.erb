@@ -28,22 +28,22 @@
               <th><%= fa_icon "pencil", class: "has-text-primary"  %> Created by</th>
               <td><%= link_to @event.creator.name, user_path(@event.creator) %></td>
           </tr>
-              <tr>
-                  <th><%= fa_icon "users", class: "has-text-primary"  %> Attendees</th>
-                  <td>
-                    <% if @event.attendees.any?%>
-                      <ul>
-                        <% @event.attendees.each do |attendee| %>
-                            <li><%= attendee.name %></li>
-                        <% end %>
-                      </ul>
-                       <% end %>
-                        <br>
-                      <% if @event.date > Time.now && logged_in? %>
-                        <%= render "invite_form" %>
-                      <% end %>
-                  </td>
-              </tr>
+          <tr>
+              <th><%= fa_icon "users", class: "has-text-primary"  %> Attendees</th>
+              <td>
+                <% if @event.attendees.any?%>
+                  <ul>
+                    <% @event.attendees.each do |attendee| %>
+                        <li><%= attendee.name %></li>
+                    <% end %>
+                  </ul>
+                    <% end %>
+                    <br>
+                  <% if @event.date > Time.now && logged_in? && (current_user == @event.creator) %>
+                    <%= render "invite_form" %>
+                  <% end %>
+              </td>
+          </tr>
       </tbody>
     </table>
   </div>
