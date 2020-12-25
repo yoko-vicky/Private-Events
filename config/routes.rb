@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'events#index'
   resources :users, only: %i[new create show index]
-  resources :events, except: %i[edit update destroy] do
-    resources :invites, only: %i[create]   
+  resources :events do
+    resources :invites, only: %i[create]
   end
   get 'sign_in', to: 'sessions#new'
   post 'sign_in', to: 'sessions#create'
