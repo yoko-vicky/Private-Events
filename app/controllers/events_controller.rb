@@ -7,7 +7,9 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
-  def show; end
+  def show
+    @users_to_invite = User.where.not(id: current_user.id).map(&:name)
+  end
 
   def new
     @event = current_user.events.build
